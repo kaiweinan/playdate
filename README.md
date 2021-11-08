@@ -32,3 +32,4 @@ belongs_to :playdate
 has_many :playdates
 has_many :users, through :playdates
 location
+# playdate

@@ -1,0 +1,20 @@
+<% if @errors%>
+<% @errors.each do |e|%>
+    <h1> <% e %> </h1>
+    <% end %>
+    <% end %>
+
+<%= form_for @playdate do |p| %>
+    <div>
+    <%= p.label :title %>
+    <%= p.text_field :title %>
+    </div>
+
+    <div>
+    <%= p.label :playdate %>
+    <%= p.date_field :playdate %>
+    </div>
+
+    <%= p.submit "Start a Playdate!" %>
+
+    <% end %>
