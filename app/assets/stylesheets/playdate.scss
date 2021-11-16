@@ -1,3 +1,21 @@
 // Place all the styles related to the playdate controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.homepage-playdates body {
+    font-size: 5em;
+    
+}
+.background{
+    background-color: rgba(253, 253, 253, 0.75);
+    padding: 20px;
+    margin: 0 auto;
+    text-align:center;
+    display:inline-block;
+    
+    
+}
+
+.bg{
+    background-color: rgba(253, 253, 253, 0.75);
+    display:inline-block;
+}

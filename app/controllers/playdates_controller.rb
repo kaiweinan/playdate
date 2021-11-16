@@ -6,7 +6,7 @@ class PlaydatesController < ApplicationController
         end
     
         def show
-            
+        
         end
     
       
@@ -33,7 +33,7 @@ class PlaydatesController < ApplicationController
             if @playdate.update(playdate_params)
                 redirect_to playdates_path
             else
-                @error = @playdate.errors.full_messages[0]
+                @errors = @playdate.errors.full_messages[0]
                 render :edit
         end
         end
@@ -50,7 +50,7 @@ class PlaydatesController < ApplicationController
         end
 
         def playdate_params
-            params.require(:playdate).permit(:title, :playdate)
+            params.require(:playdate).permit(:title, :playdate, :location, :vaccination, :personality)
         end
     
 end

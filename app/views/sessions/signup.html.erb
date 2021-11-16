@@ -1,0 +1,33 @@
+<header> Welcome  to Playdate, Please sign up  </header>
+
+<% if @errors%>
+    <h1>  <%= @errors.each do |e| %> </h1>
+       <h1> <% e %></h1>
+       <% end %>
+    <% end %>
+
+    <%= form_for(@user,url:signup_path) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+    <div>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+    
+    </div>
+    
+    <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    </div>
+    <%= f.submit "Signup" %>
+    <% end %>
+    

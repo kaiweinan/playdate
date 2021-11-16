@@ -1,0 +1,23 @@
+
+
+
+<%= form_for @playdate do |p| %></p>
+    <div class=background>
+    <%= p.label :title %>
+    <%= p.text_field :title %>
+    <br>
+    <%= p.label :playdate %>
+    <%= p.date_field :playdate %>
+    <br>  
+    <%= p.label :vaccination %>
+    <%= p.text_field :vaccination %>
+    <br>
+    <%= p.label :location %>
+    <%= p.text_area :location %>
+    <br>
+    <%= p.label :personality %>
+    <%= p.text_area :personality %>
+    <br>
+     <%= p.submit %>
+    <% end %>
+    

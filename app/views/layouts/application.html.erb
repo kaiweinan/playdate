@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Railsproject</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IntroToRailsModelsAndRestfulRouting</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
+
+  
+  
+  
+
 
   <body>
+
+    <nav class="navbar navbar-inverse">
+      <ul class="nav navbar-nav">
+      <div class="navbar-header">
+      <a class="navbar-brand" >PlayDate</a>
+    </div>
+    <li><%= link_to("Home", root_path) %></li>
+
+          <% if logged_in? %>
+  
+          
+          <li><%= link_to("Playdates", playdates_path) %></li>
+          <li><%= link_to("Create Playdate", new_playdate_path) %></li>
+          <li><%= link_to("Logout", logout_path) %></li>
+         
+              <% else %>
+            <li><%= link_to("Signup", signup_path) %></li>
+            <li><%= link_to("Login", new_user_path) %></li>
+            <li><%= link_to "Log in with Google", '/auth/google_oauth2', method: :post%> </li>
+          <% end %>
+      </ul>
+    </nav>
+    <% if flash[:error] %>
+      <% flash[:error].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+    <%= content_tag("p", flash[:notice]) if flash[:notice] %>
     <%= yield %>
   </body>
 </html>

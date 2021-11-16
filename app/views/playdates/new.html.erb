@@ -1,20 +1,6 @@
-<% if @errors%>
-<% @errors.each do |e|%>
-    <h1> <% e %> </h1>
-    <% end %>
-    <% end %>
+<h1>Create Playdate</p></h1>
 
-<%= form_for @playdate do |p| %>
-    <div>
-    <%= p.label :title %>
-    <%= p.text_field :title %>
-    </div>
+<%= render 'errors' %>
+<%= render 'form' %>
 
-    <div>
-    <%= p.label :playdate %>
-    <%= p.date_field :playdate %>
-    </div>
 
-    <%= p.submit "Start a Playdate!" %>
-
-    <% end %>

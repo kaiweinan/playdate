@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_222241) do
+ActiveRecord::Schema.define(version: 2021_11_09_025958) do
 
   create_table "playdates", force: :cascade do |t|
     t.string "title"
     t.date "playdate"
+    t.string "location"
+    t.string "vaccination"
+    t.string "personality"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "playdate_id"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
